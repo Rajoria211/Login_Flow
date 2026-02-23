@@ -12,7 +12,7 @@ const AuthLayout = ({ children }: Props) => {
           <p>Follow the steps to create your account</p>
         </div>
         <div className="illustration">
-          <img src="src/component/layout/illustration.png" alt="illustration" />
+          <img src="./illustration.png" alt="illustration" />
         </div>
       </div>
       <div className="right">{children}</div>

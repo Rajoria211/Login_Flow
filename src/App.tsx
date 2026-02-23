@@ -42,11 +42,7 @@ function App() {
         />
       )}
       {step === "otp" && (
-        <OtpStep
-          onNext={() => next("name")}
-          onBack={() => back("mobile")}
-          updateData={updateData}
-        />
+        <OtpStep onNext={() => next("name")} onBack={() => back("mobile")} />
       )}
       {step === "name" && (
         <NameStep
