@@ -1,0 +1,20 @@
+.body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+}
+
+.title {
+  width: 489px;
+  height: 145px;
+  color: rgba(19, 44, 74, 1);
+}
+
+.illustration {
+  width: 600px;
+}
