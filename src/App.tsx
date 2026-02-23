@@ -1,17 +1,68 @@
-import type { Step } from "./type/step";
-import AuthLayout from "./component/layout/AuthLayout";
-import StepRenderer from "./component/step/StepRenderer";
 import { useState } from "react";
+import type { Step } from "./type/step";
+import AuthLayout from "./layout/AuthLayout";
+import AccountType from "./component/AccountType";
+import OtpStep from "./component/OtpStep";
+import PasswordStep from "./component/PasswordStep";
+import NameStep from "./component/NameStep";
+import MobileStep from "./component/MobileStep";
+import SuccessModal from "./component/SuccessModal";
+export interface FormData {
+  accountType?: "personal" | "business";
+  mobile?: string;
+  firstName?: string;
+  lastName?: string;
+  password?: string;
+}
 
 function App() {
   const [step, setStep] = useState<Step>("accountType");
+  const [data, setData] = useState<FormData>({});
 
-  const nextStep = (next: Step) => setStep(next);
-  const prevStep = (prev: Step) => setStep(prev);
+  const next = (nextStep: Step) => setStep(nextStep);
+  const back = (prevStep: Step) => setStep(prevStep);
 
+  const updateData = (values: Partial<FormData>) => {
+    setData((prev) => ({ ...prev, ...values }));
+  };
   return (
     <AuthLayout>
-      <StepRenderer step={step} nextStep={nextStep} prevStep={prevStep} />
+      {step === "accountType" && (
+        <AccountType
+          onNext={() => next("mobile")}
+          updateData={updateData}
+          data={data}
+        />
+      )}
+      {step === "mobile" && (
+        <MobileStep
+          onNext={() => next("otp")}
+          onBack={() => back("accountType")}
+          updateData={updateData}
+        />
+      )}
+      {step === "otp" && (
+        <OtpStep
+          onNext={() => next("name")}
+          onBack={() => back("mobile")}
+          updateData={updateData}
+        />
+      )}
+      {step === "name" && (
+        <NameStep
+          onNext={() => next("password")}
+          onBack={() => back("otp")}
+          updateData={updateData}
+        />
+      )}
+      {step === "password" && (
+        <PasswordStep
+          onNext={() => next("success")}
+          onBack={() => back("name")}
+          updateData={updateData}
+        />
+      )}
+      {step === "success" && <SuccessModal data={data} />}
     </AuthLayout>
   );
 }

@@ -61,3 +61,16 @@
   width: 100%;
   height: auto;
 }
+
+.option {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid #d6dde5;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  border-color: #1e5eff;
+}
