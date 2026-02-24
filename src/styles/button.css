@@ -1,0 +1,67 @@
+/* ============================= */
+/* Button Row */
+/* ============================= */
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  gap: 25px;
+}
+
+/* Primary Button */
+.btn.primary {
+  width: 300px;
+  height: 49px;
+
+  border-radius: 38px;
+  border: 2px solid rgba(217, 224, 230, 1);
+
+  background-color: rgba(0, 84, 253, 1);
+  color: white;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn.primary:hover {
+  background-color: #1e40af;
+}
+
+.btn.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ============================= */
+/* Secondary Button (Back) */
+/* ============================= */
+
+.btn.secondary {
+  width: 300px;
+  height: 49px;
+
+  border-radius: 38px;
+  border: 2px solid rgba(217, 224, 230, 1);
+
+  background-color: transparent;
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}

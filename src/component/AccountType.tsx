@@ -9,7 +9,9 @@ interface Props {
 export default function AccountTypeStep({ data, updateData, onNext }: Props) {
   return (
     <div className="step-container">
-      <h2 className="step-title">What type of account are you opening?</h2>
+      <h4 className="account-title">
+        To join us tell us <b>what type of account</b> you are opening
+      </h4>
 
       <div className="account-options">
         <button

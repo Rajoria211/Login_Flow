@@ -1,0 +1,23 @@
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-modal {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 400px;
+  text-align: center;
+}
+
+.summary-box {
+  background: #f3f4f6;
+  padding: 20px;
+  border-radius: var(--radius);
+  margin: 20px 0;
+}
