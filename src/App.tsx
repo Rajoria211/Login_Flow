@@ -24,13 +24,13 @@ function App() {
   const next = (nextStep: Step) => setStep(nextStep);
   const back = (prevStep: Step) => setStep(prevStep);
 
-  const stepOrder:Step[]=[
+  const stepOrder: Step[] = [
     "accountType",
     "mobile",
     "otp",
     "name",
-    "password"
-  ]
+    "password",
+  ];
 
   const currentIndex = stepOrder.indexOf(step);
 
@@ -39,7 +39,7 @@ function App() {
   };
   return (
     <AuthLayout>
-      <ProgressBar currentStep={currentIndex-1} total={stepOrder.length}/>
+      <ProgressBar currentStep={currentIndex - 1} total={stepOrder.length} />
       {step === "accountType" && (
         <AccountType
           onNext={() => next("mobile")}

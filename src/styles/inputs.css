@@ -28,23 +28,45 @@
   margin-top: 6px;
 }
 
+.mobile-step-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  color: rgba(19, 44, 74, 1);
+}
+
+.mobile-number {
+  font-weight: 400;
+  color: rgba(130, 146, 161, 1);
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.mobile-number span {
+  color: var(--error);
+}
+
 .phone-input-wrapper {
   display: flex;
   align-items: center;
-  border: 1px solid var(--gray-border);
-  border-radius: var(--radius);
+  gap: 25px;
   overflow: hidden;
 }
 
 .country-selector {
   display: flex;
   align-items: center;
+  border: 1px solid rgba(114, 156, 240, 1);
+  height: 76px;
+  border-radius: 12px;
   padding: 0 12px;
   gap: 6px;
 }
 
 .country-code-select {
   border: none;
+  width: 50px;
+  height: 50px;
   background: transparent;
   font-size: 14px;
 }
@@ -53,17 +75,13 @@
   outline: none;
 }
 
-.divider {
-  width: 1px;
-  height: 28px;
-  background: var(--gray-border);
-}
-
 .mobile-input {
   flex: 1;
-  border: none;
+  height: 76px;
   padding: 12px;
   font-size: 14px;
+  border: 1px solid rgba(114, 156, 240, 1);
+  border-radius: 12px;
 }
 
 .mobile-input:focus {

@@ -77,7 +77,6 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-top: 40px;
-  
 }
 
 .account-option {
@@ -92,26 +91,27 @@ label {
   box-shadow: 0 4px 8px rgba(188, 203, 219, 0.3);
 }
 
-.personal-account, .business-account{
-  position:relative;
+.personal-account,
+.business-account {
+  position: relative;
 }
 
-.icon-image{
+.icon-image {
   position: absolute;
-  width: 12px;
-  top: 18px;
-  left: 20px;
+  width: 16px;
+  top: 17px;
+  left: 19px;
 }
 
-.check-mark{
+.check-mark {
   position: absolute;
-  right:17px;
-  top:14px;
+  right: 17px;
+  top: 14px;
   width: 20px;
   opacity: 0;
 }
 
-.check-mark.active{
+.check-mark.active {
   opacity: 1;
 }
 
