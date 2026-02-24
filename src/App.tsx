@@ -7,6 +7,8 @@ import PasswordStep from "./component/PasswordStep";
 import NameStep from "./component/NameStep";
 import MobileStep from "./component/MobileStep";
 import SuccessModal from "./component/SuccessModal";
+import ProgressBar from "./component/ProgressBar";
+
 export interface FormData {
   accountType?: "personal" | "business";
   mobile?: string;
@@ -22,11 +24,22 @@ function App() {
   const next = (nextStep: Step) => setStep(nextStep);
   const back = (prevStep: Step) => setStep(prevStep);
 
+  const stepOrder:Step[]=[
+    "accountType",
+    "mobile",
+    "otp",
+    "name",
+    "password"
+  ]
+
+  const currentIndex = stepOrder.indexOf(step);
+
   const updateData = (values: Partial<FormData>) => {
     setData((prev) => ({ ...prev, ...values }));
   };
   return (
     <AuthLayout>
+      <ProgressBar currentStep={currentIndex-1} total={stepOrder.length}/>
       {step === "accountType" && (
         <AccountType
           onNext={() => next("mobile")}

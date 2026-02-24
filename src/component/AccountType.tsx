@@ -9,12 +9,14 @@ interface Props {
 export default function AccountTypeStep({ data, updateData, onNext }: Props) {
   return (
     <div className="step-container">
+
+      <div className="account-options">
       <h4 className="account-title">
         To join us tell us <b>what type of account</b> you are opening
       </h4>
-
-      <div className="account-options">
-        <button
+        <div className="personal-account">
+          <img className="icon-image" src="/src/styles/images/person_icon.png" alt="" />
+          <button
           className={`account-option ${
             data.accountType === "personal" ? "active" : ""
           }`}
@@ -22,8 +24,13 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
         >
           Personal
         </button>
-
-        <button
+        <img className={`check-mark ${
+            data.accountType === "personal" ? "active" : ""
+          }`} src="/src/styles/images/Checkbox.png" alt="selected" />
+        </div>
+        <div className="business-account">
+          <img className="icon-image" src="src/styles/images/brief_case.png" alt="" />
+          <button
           className={`account-option ${
             data.accountType === "business" ? "active" : ""
           }`}
@@ -31,6 +38,11 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
         >
           Business
         </button>
+        <img className={`check-mark ${
+            data.accountType === "business" ? "active" : ""
+          }`} src="/src/styles/images/Checkbox.png" alt="selected" />
+        </div>
+        
       </div>
 
       <div className="button-row">

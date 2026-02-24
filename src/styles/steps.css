@@ -62,12 +62,14 @@ label {
 /* ============================= */
 .account-title {
   font-weight: 400;
+  max-width: 360px;
   font-size: 20px;
   line-height: 30px;
   color: rgba(19, 44, 74, 1);
 }
 .account-title b {
   font-weight: 500;
+  width: 450px;
 }
 
 .account-options {
@@ -75,16 +77,42 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-top: 40px;
+  
 }
 
 .account-option {
   width: 100%;
-  padding: 16px;
+  padding: 16px 53px;
+  background-color: white;
+  text-align: left;
   border: 1px solid rgba(187, 187, 187, 0.867);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 8px rgba(188, 203, 219, 0.3);
+}
+
+.personal-account, .business-account{
+  position:relative;
+}
+
+.icon-image{
+  position: absolute;
+  width: 12px;
+  top: 18px;
+  left: 20px;
+}
+
+.check-mark{
+  position: absolute;
+  right:17px;
+  top:14px;
+  width: 20px;
+  opacity: 0;
+}
+
+.check-mark.active{
+  opacity: 1;
 }
 
 .account-option:hover {
@@ -93,7 +121,7 @@ label {
 
 .account-option.active {
   border-color: rgba(0, 84, 253, 1);
-  background-color: #fafafa;
+  background-color: white;
 }
 
 /* ============================= */
