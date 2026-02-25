@@ -23,7 +23,6 @@
   justify-content: space-between;
 }
 
-
 /* ============================= */
 /* Form Layout */
 /* ============================= */
@@ -93,6 +92,7 @@ label {
   top: 14px;
   width: 20px;
   opacity: 0;
+  transition: opacity 0.15s ease;
 }
 
 .check-mark.active {
@@ -183,31 +183,31 @@ label {
   gap: 50px;
 }
 
-.otp-step-title{
+.otp-step-title {
   font-size: 24px;
   font-weight: 500;
   line-height: 143%;
   color: rgba(19, 44, 74, 1);
 }
 
-.otp-input-title{
+.otp-input-title {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color:rgba(130, 146, 161, 1);
+  color: rgba(130, 146, 161, 1);
 }
 
-.otp-input-container{
-  max-width: 400px;
+.otp-input-container {
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.otp-blocks{
+.otp-blocks {
   display: flex;
-  gap: 40px;
-  
+  width: 100%;
+  justify-content: space-between;
 }
 
 .otp-input {
@@ -226,7 +226,7 @@ label {
   outline: none;
 }
 
-.resend-otp{
+.resend-otp {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -235,7 +235,7 @@ label {
   color: rgb(83, 88, 93);
 }
 
-.resend-otp span{
+.resend-otp span {
   cursor: pointer;
   font-weight: 500;
   color: rgba(0, 84, 253, 1);
@@ -245,13 +245,13 @@ label {
 /* Name Styling */
 /* ============================= */
 
-.name-container{
+.name-container {
   display: flex;
   flex-direction: column;
-  gap:50px
+  gap: 50px;
 }
 
-.name-step-title{
+.name-step-title {
   font-weight: 500;
   font-size: 24px;
   color: rgba(19, 44, 74, 1);
@@ -264,8 +264,8 @@ label {
   color: rgba(130, 146, 161, 1);
 }
 
-.form-group .input{
-  min-width: 516px;
+.form-group .input {
+  width: 80%;
   height: 65px;
   border: 1px solid rgba(114, 156, 240, 1);
 }
@@ -280,18 +280,24 @@ label {
 /* ============================= */
 /* Password styling */
 /* ============================= */
-.password-step-title
-{
+
+.password-step-title {
   color: rgba(19, 44, 74, 1);
   font-size: 24px;
   font-weight: 500;
 }
-.form-group.password
-{
+.form-group.password {
+  max-width: 480px;
   position: relative;
 }
 
-.show-password{
+.input.password {
+  width: 100%;
+  height: 65px;
+  border: 1px solid rgba(114, 156, 240, 1);
+}
+
+.show-password {
   width: fit-content;
   background: transparent;
   border: none;
@@ -305,9 +311,11 @@ label {
   font-size: 0.8rem;
   font-weight: 400;
   color: rgba(130, 146, 161, 1);
-
 }
 
+.password-guide .error-text {
+  color: var(--error);
+}
 
 /* ============================= */
 /* Error Styling */

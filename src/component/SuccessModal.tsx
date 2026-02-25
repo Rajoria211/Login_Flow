@@ -37,7 +37,7 @@ export default function SuccessModal({ data }: Props) {
             </span>
           </p>
           <p className="summary-field">
-            Mobile Number <span>{data.mobile}</span>
+            Mobile Number <span>{data.mobile?.split(" ")[1]}</span>
           </p>
         </div>
         <span className="secure-title">

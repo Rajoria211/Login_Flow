@@ -11,6 +11,7 @@ export default function MobileStep({ onNext, onBack, updateData }: Props) {
   const [countryCode, setCountryCode] = useState("+1");
   const [mobile, setMobile] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleContinue = () => {
     if (mobile.length !== 10) {
@@ -18,8 +19,12 @@ export default function MobileStep({ onNext, onBack, updateData }: Props) {
       return;
     }
 
-    updateData({ mobile: `${countryCode}${mobile}` });
-    onNext();
+    setLoading(true);
+    setTimeout(() => {
+      updateData({ mobile: `${countryCode} ${mobile}` });
+      setLoading(false);
+      onNext();
+    }, 1000);
   };
 
   return (
@@ -75,9 +80,9 @@ export default function MobileStep({ onNext, onBack, updateData }: Props) {
         <button
           className="btn primary"
           onClick={handleContinue}
-          
+          disabled={loading}
         >
-          Continue
+          {loading ? "Loading..." : "Continue"}
         </button>
       </div>
     </div>

@@ -8,6 +8,7 @@ import NameStep from "./component/NameStep";
 import MobileStep from "./component/MobileStep";
 import SuccessModal from "./component/SuccessModal";
 import ProgressBar from "./component/ProgressBar";
+import OtpPopup from "./component/OtpPopup";
 
 export interface FormData {
   accountType?: "personal" | "business";
@@ -22,6 +23,20 @@ function App() {
   const [data, setData] = useState<FormData>({});
 
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const [generatedOtp, setGeneratedOtp] = useState<string | null>(null);
+  const [showOtpPopup, setShowOtpPopup] = useState(false);
+
+  const generateOtp = () => {
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+    setGeneratedOtp(otp);
+    setShowOtpPopup(true);
+    setTimeout(() => {
+      setShowOtpPopup(false);
+    }, 4000);
+
+    return otp;
+  };
 
   const next = (nextStep: Step) => setStep(nextStep);
   const back = (prevStep: Step) => setStep(prevStep);
@@ -40,7 +55,11 @@ function App() {
     setData((prev) => ({ ...prev, ...values }));
   };
   return (
-    <AuthLayout>
+    <AuthLayout
+      otpToast={
+        showOtpPopup && generatedOtp ? <OtpPopup otp={generatedOtp} /> : null
+      }
+    >
       {step !== "accountType" && (
         <ProgressBar currentStep={currentIndex} total={stepOrder.length} />
       )}
@@ -53,13 +72,20 @@ function App() {
       )}
       {step === "mobile" && (
         <MobileStep
-          onNext={() => next("otp")}
+          onNext={() => {
+            generateOtp();
+            next("otp");
+          }}
           onBack={() => back("accountType")}
           updateData={updateData}
         />
       )}
       {step === "otp" && (
-        <OtpStep onNext={() => next("name")} onBack={() => back("mobile")} />
+        <OtpStep
+          onNext={() => next("name")}
+          onBack={() => back("mobile")}
+          onResend={generateOtp}
+        />
       )}
       {step === "name" && (
         <NameStep

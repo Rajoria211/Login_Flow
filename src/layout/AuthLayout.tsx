@@ -1,8 +1,9 @@
 type Props = {
   children: React.ReactNode;
+  otpToast?: React.ReactNode;
 };
 
-const AuthLayout = ({ children }: Props) => {
+const AuthLayout = ({ children, otpToast }: Props) => {
   return (
     <div className="layout">
       <div className="left">
@@ -15,7 +16,9 @@ const AuthLayout = ({ children }: Props) => {
           <img src="src/layout/illustration.png" alt="illustration" />
         </div>
       </div>
-      <div className="right">{children}</div>
+      <div className="right">
+        {children} {otpToast}
+      </div>
     </div>
   );
 };

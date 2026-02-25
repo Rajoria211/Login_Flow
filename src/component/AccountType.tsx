@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { FormData } from "../App";
 
 interface Props {
@@ -7,6 +8,17 @@ interface Props {
 }
 
 export default function AccountTypeStep({ data, updateData, onNext }: Props) {
+  const [loading, setLoading] = useState(false);
+
+  const handleContinue = () => {
+    if (!data.accountType) return;
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      onNext();
+    }, 1000);
+  };
+
   const personalIcon: string =
     data.accountType === "personal"
       ? "/src/styles/images/person_selected.png"
@@ -64,10 +76,10 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
         <button className="btn secondary">Back</button>
         <button
           className="btn primary"
-          disabled={!data.accountType}
-          onClick={onNext}
+          disabled={!data.accountType || loading}
+          onClick={handleContinue}
         >
-          Continue
+          {loading ? "Loading..." : "Continue"}
         </button>
       </div>
     </div>
