@@ -21,6 +21,8 @@ function App() {
   const [step, setStep] = useState<Step>("accountType");
   const [data, setData] = useState<FormData>({});
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const next = (nextStep: Step) => setStep(nextStep);
   const back = (prevStep: Step) => setStep(prevStep);
 
@@ -39,7 +41,9 @@ function App() {
   };
   return (
     <AuthLayout>
-      {step !== "accountType" && < ProgressBar currentStep={currentIndex} total={stepOrder.length} />}
+      {step !== "accountType" && (
+        <ProgressBar currentStep={currentIndex} total={stepOrder.length} />
+      )}
       {step === "accountType" && (
         <AccountType
           onNext={() => next("mobile")}
@@ -66,12 +70,12 @@ function App() {
       )}
       {step === "password" && (
         <PasswordStep
-          onNext={() => next("success")}
+          onNext={() => setShowSuccess(true)}
           onBack={() => back("name")}
           updateData={updateData}
         />
       )}
-      {step === "success" && <SuccessModal data={data} />}
+      {showSuccess && <SuccessModal data={data} />}
     </AuthLayout>
   );
 }

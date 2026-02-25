@@ -11,13 +11,66 @@
   background: white;
   padding: 40px;
   border-radius: 16px;
-  width: 400px;
+  width: 550px;
   text-align: center;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-modal h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 100%;
+  color: rgba(63, 62, 63, 1);
+}
+
+.success-modal p {
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(86, 86, 86, 1);
+}
+
+.verification-icon {
+  width: 46px;
 }
 
 .summary-box {
-  background: #f3f4f6;
-  padding: 20px;
+  background: rgba(245, 245, 245, 1);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 30px 25px;
+  gap: 15px;
   border-radius: var(--radius);
   margin: 20px 0;
+}
+
+.summary-box p {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 100%;
+  color: rgba(86, 86, 86, 1);
+}
+
+.summary-field span {
+  font-weight: 500;
+  color: black;
+}
+
+.secure-title {
+  display: flex;
+  gap: 4px;
+}
+
+.secure-title img {
+  width: 14px;
+}
+
+.btn.primary.dashboard {
+  height: 3rem;
+  width: 50%;
 }

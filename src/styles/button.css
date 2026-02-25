@@ -12,7 +12,7 @@
 
 /* Primary Button */
 .btn.primary {
-  min-width: 220px;
+  min-width: 230px;
   height: 40px;
 
   border-radius: 38px;
@@ -46,7 +46,7 @@
 /* ============================= */
 
 .btn.secondary {
-  min-width: 220px;
+  min-width: 230px;
   height: 40px;
 
   border-radius: 38px;

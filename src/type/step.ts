@@ -1,7 +1,1 @@
-export type Step =
-  | "accountType"
-  | "mobile"
-  | "otp"
-  | "name"
-  | "password"
-  | "success";
+export type Step = "accountType" | "mobile" | "otp" | "name" | "password";
