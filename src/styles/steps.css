@@ -280,7 +280,33 @@ label {
 /* ============================= */
 /* Password styling */
 /* ============================= */
+.password-step-title
+{
+  color: rgba(19, 44, 74, 1);
+  font-size: 24px;
+  font-weight: 500;
+}
+.form-group.password
+{
+  position: relative;
+}
 
+.show-password{
+  width: fit-content;
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 23px;
+  top: 48px;
+  cursor: pointer;
+}
+
+.password-guide {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(130, 146, 161, 1);
+
+}
 
 
 /* ============================= */
