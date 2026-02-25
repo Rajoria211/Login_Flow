@@ -125,31 +125,6 @@ label {
 }
 
 /* ============================= */
-/* OTP Styling */
-/* ============================= */
-
-.otp-container {
-  display: flex;
-  gap: 14px;
-  margin: 30px 0;
-}
-
-.otp-input {
-  width: 52px;
-  height: 52px;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
-}
-
-.otp-input:focus {
-  border-color: #1d4ed8;
-  outline: none;
-}
-
-/* ============================= */
 /* Error Styling */
 /* ============================= */
 

@@ -75,7 +75,7 @@ export default function MobileStep({ onNext, onBack, updateData }: Props) {
         <button
           className="btn primary"
           onClick={handleContinue}
-          disabled={mobile.length !== 10}
+          
         >
           Continue
         </button>

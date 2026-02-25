@@ -39,7 +39,7 @@ function App() {
   };
   return (
     <AuthLayout>
-      <ProgressBar currentStep={currentIndex - 1} total={stepOrder.length} />
+      {step !== "accountType" && < ProgressBar currentStep={currentIndex} total={stepOrder.length} />}
       {step === "accountType" && (
         <AccountType
           onNext={() => next("mobile")}

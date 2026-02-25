@@ -7,13 +7,13 @@
   justify-content: center;
   align-items: center;
   margin-top: 80px;
-  gap: 25px;
+  gap: 22px;
 }
 
 /* Primary Button */
 .btn.primary {
   min-width: 220px;
-  height: 49px;
+  height: 40px;
 
   border-radius: 38px;
   border: 2px solid rgba(217, 224, 230, 1);
@@ -47,7 +47,7 @@
 
 .btn.secondary {
   min-width: 220px;
-  height: 49px;
+  height: 40px;
 
   border-radius: 38px;
   border: 2px solid rgba(217, 224, 230, 1);
