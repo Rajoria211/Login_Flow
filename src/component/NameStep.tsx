@@ -20,26 +20,28 @@ export default function NameStep({ onNext, onBack, updateData }: Props) {
 
   return (
     <div className="step-container">
-      <h2 className="step-title">What is your name?</h2>
-
+      <div className="name-container">
+      <h2 className="name-step-title">What is your name?</h2>
       <div className="form-group">
-        <label>First Name</label>
+        <label htmlFor="firstname">First Name</label>
         <input
+          id="firstname"
           className="input"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
+          placeholder="Oliver"
         />
-      </div>
-
-      <div className="form-group">
-        <label>Last Name</label>
+        <label htmlFor="lastname">Last Name</label>
         <input
+          id="lastname"
           className="input"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
+          placeholder="LastName"
         />
       </div>
-
+    </div>
+    
       <div className="button-row">
         <button className="btn secondary" onClick={onBack}>
           Back
