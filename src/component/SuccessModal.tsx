@@ -1,4 +1,6 @@
 import type { FormData } from "../App";
+import verification_icon from "/images/okay.png";
+import shield_icon from "/images/shield.png"
 
 interface Props {
   data: FormData;
@@ -10,7 +12,7 @@ export default function SuccessModal({ data }: Props) {
       <div className="success-modal">
         <img
           className="verification-icon"
-          src="src/styles/images/okay.png"
+          src={verification_icon}
           alt="checkmark"
         />
         <h2>You’re all set!</h2>
@@ -41,7 +43,7 @@ export default function SuccessModal({ data }: Props) {
           </p>
         </div>
         <span className="secure-title">
-          <img src="src/styles/images/shield.png" alt="shield" />
+          <img src={shield_icon} alt="shield" />
           <p>Your account is secured with bank-grade security</p>
         </span>
         <button className="btn primary dashboard">Go To Dashboard</button>

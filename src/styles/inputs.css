@@ -1,4 +1,6 @@
-/* inputs.css */
+/* ============================= */
+/* Input Styling */
+/* ============================= */
 
 .input {
   width: 100%;
@@ -18,11 +20,7 @@
   border-color: var(--error);
 }
 
-.error-text {
-  color: var(--error);
-  font-size: 12px;
-  margin-top: 6px;
-}
+
 
 /* ============================= */
 /* Responsive */

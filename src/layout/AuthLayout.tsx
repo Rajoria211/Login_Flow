@@ -1,3 +1,5 @@
+import illustration from "./illustration.png"
+
 type Props = {
   children: React.ReactNode;
   otpToast?: React.ReactNode;
@@ -13,7 +15,7 @@ const AuthLayout = ({ children, otpToast }: Props) => {
           <p>Follow the steps to create your account</p>
         </div>
         <div className="illustration">
-          <img src="src/layout/illustration.png" alt="illustration" />
+          <img src={illustration} alt="illustration" />
         </div>
       </div>
       <div className="right">

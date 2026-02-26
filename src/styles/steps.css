@@ -326,7 +326,6 @@ label {
 }
 
 .error-text {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: #ef4444;
-  margin-top: 6px;
 }

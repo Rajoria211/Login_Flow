@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormData } from "../App";
+import eye_icon from "/images/eye_icon.png";
 
 interface Props {
   onNext: () => void;
@@ -52,7 +53,7 @@ export default function PasswordStep({ onNext, onBack, updateData }: Props) {
               setShow((prev) => ({ ...prev, password: !prev.password }));
             }}
           >
-            <img src="src/styles/images/eye_icon.png" alt="show" />
+            <img src={eye_icon} alt="show" />
           </button>
           <p
             className={`password-guide ${
@@ -79,7 +80,7 @@ export default function PasswordStep({ onNext, onBack, updateData }: Props) {
               setShow((prev) => ({ ...prev, confirm: !prev.confirm }));
             }}
           >
-            <img src="src/styles/images/eye_icon.png" alt="show" />
+            <img src={eye_icon} alt="show" />
           </button>
           <p
             className={`password-guide ${

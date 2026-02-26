@@ -1,6 +1,10 @@
 import { useState } from "react";
 import type { FormData } from "../App";
-
+import person_selected from "/images/person_selected.png"
+import person_not_selected from "/images/person_not_selected.png"
+import briefcase_selected from "/images/briefcase_selected.png"
+import briefcase_not_selected from "/images/briefcase_not_selected.png"
+import check_box from "/images/Checkbox.png"
 interface Props {
   data: FormData;
   updateData: (data: Partial<FormData>) => void;
@@ -21,12 +25,12 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
 
   const personalIcon: string =
     data.accountType === "personal"
-      ? "/src/styles/images/person_selected.png"
-      : "/src/styles/images/person_not_selected.png";
+      ? person_selected
+      : person_not_selected;
   const businessIcon: string =
     data.accountType === "business"
-      ? "/src/styles/images/briefcase_selected.png"
-      : "/src/styles/images/briefcase_not_selected.png";
+      ? briefcase_selected
+      : briefcase_not_selected;
 
   return (
     <div className="step-container">
@@ -48,7 +52,7 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
             className={`check-mark ${
               data.accountType === "personal" ? "active" : ""
             }`}
-            src="/src/styles/images/Checkbox.png"
+            src={check_box}
             alt="selected"
           />
         </div>
@@ -66,7 +70,7 @@ export default function AccountTypeStep({ data, updateData, onNext }: Props) {
             className={`check-mark ${
               data.accountType === "business" ? "active" : ""
             }`}
-            src="/src/styles/images/Checkbox.png"
+            src={check_box}
             alt="selected"
           />
         </div>

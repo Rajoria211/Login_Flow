@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormData } from "../App";
+import us_flag from "/images/us.png"
 
 interface Props {
   onNext: () => void;
@@ -40,7 +41,7 @@ export default function MobileStep({ onNext, onBack, updateData }: Props) {
           <div className="country-selector">
             <span className="flag">
               <img
-                src={`src/styles/images/us.png`}
+                src={us_flag}
                 style={{ width: "20px" }}
                 alt="country-flag"
               />
